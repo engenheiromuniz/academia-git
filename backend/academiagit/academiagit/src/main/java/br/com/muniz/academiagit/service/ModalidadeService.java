@@ -1,0 +1,25 @@
+package br.com.muniz.academiagit.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.muniz.academiagit.model.ModalidadeModel;
+import br.com.muniz.academiagit.repository.ModalidadeRepository;
+
+@Service
+public class ModalidadeService {
+	
+	@Autowired
+	private ModalidadeRepository repository;
+	
+	public ModalidadeModel salvarModalidade(ModalidadeModel modalidade) {
+		return repository.save(modalidade);
+	}
+	
+	public List<ModalidadeModel> listarModalidade(){
+		return repository.findAll();		
+	}
+
+}

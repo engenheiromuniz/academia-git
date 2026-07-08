@@ -1,0 +1,17 @@
+package br.com.muniz.academiagit.model;
+
+import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+public class AlunoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+    private String telefone;
+    private Boolean pago;
+}

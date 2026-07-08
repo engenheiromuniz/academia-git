@@ -1,0 +1,24 @@
+package br.com.muniz.academiagit.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.muniz.academiagit.model.AlunoModel;
+import br.com.muniz.academiagit.repository.AlunoRepository;
+
+@Service
+public class AlunoService {
+	
+	@Autowired
+	private AlunoRepository repository;
+	
+	public AlunoModel inserirAluno(AlunoModel aluno) {
+		return repository.save(aluno);
+	}
+	
+	public List<AlunoModel> listarAlunos(){
+		return repository.findAll();
+	}
+}
